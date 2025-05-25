@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学海无涯 - 学习博客</title>
+    <style>
+        :root {
+            --primary: #4285f4;
+            --secondary: #34a853;
+            --accent: #ea4335;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2d9246;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid white;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary), #5c6bc0);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .posts {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .post-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .post-image {
+            height: 200px;
+            background-color: var(--gray);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .post-content {
+            padding: 1.5rem;
+        }
+        
+        .post-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .post-excerpt {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">学海无涯</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="#">分类</a></li>
+                    <li><a href="#">关于</a></li>
+                    <li><a href="edit.html" class="btn btn-outline">写文章</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>记录学习历程，分享知识心得</h1>
+            <p>一个专为学生打造的学习博客平台，帮助你整理学习笔记，分享学习经验，与同学共同进步</p>
+            <a href="edit.html" class="btn">开始写作</a>
+        </div>
+    </section>
+    
+    <section class="posts container">
+        <h2 class="section-title">最新文章</h2>
+        <div class="post-grid">
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://source.unsplash.com/random/600x400/?study')"></div>
+                <div class="post-content">
+                    <h3 class="post-title"><a href="article.html">如何高效学习编程</a></h3>
+                    <p class="post-excerpt">分享我在学习编程过程中的一些高效方法和技巧，帮助初学者快速入门...</p>
+                    <div class="post-meta">
+                        
+                        <span>2025-05-10</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://source.unsplash.com/random/600x400/?book')"></div>
+                <div class="post-content">
+                    <h3 class="post-title"><a href="article.html">数学学习方法总结</a></h3>
+                    <p class="post-excerpt">高等数学学习经验分享，包括微积分、线性代数等课程的学习方法和资源推荐...</p>
+                    <div class="post-meta">
+                        
+                        <span>2025-05-08</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://source.unsplash.com/random/600x400/?note')"></div>
+                <div class="post-content">
+                    <h3 class="post-title"><a href="article.html">英语学习笔记分享</a></h3>
+                    <p class="post-excerpt">我的英语学习笔记整理，包括单词记忆法、听力训练技巧和口语练习方法...</p>
+                    <div class="post-meta">
+                        
+                        <span>2025-05-05</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://source.unsplash.com/random/600x400/?computer')"></div>
+                <div class="post-content">
+                    <h3 class="post-title"><a href="article.html">数据结构与算法学习心得</a></h3>
+                    <p class="post-excerpt">数据结构与算法学习路线图，适合计算机专业学生和准备面试的同学参考...</p>
+                    <div class="post-meta">
+                        
+                        <span>2025-05-03</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://source.unsplash.com/random/600x400/?library')"></div>
+                <div class="post-content">
+                    <h3 class="post-title"><a href="article.html">如何做好文献综述</a></h3>
+                    <p class="post-excerpt">学术论文写作中文献综述部分的撰写技巧，帮助你在研究项目中更好地整理和分析文献...</p>
+                    <div class="post-meta">
+                        <span>2025-05-01</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://source.unsplash.com/random/600x400/?classroom')"></div>
+                <div class="post-content">
+                    <h3 class="post-title"><a href="article.html">时间管理技巧分享</a></h3>
+                    <p class="post-excerpt">大学生必备的时间管理方法，帮助你在繁忙的学业中保持高效和平衡...</p>
+                    <div class="post-meta">
+                        
+                        <span>2025-04-28</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 学海无涯学习博客. 保留所有权利.</p>
+            <p>联系我们: contact@xuehai.com</p>
+        </div>
+    </footer>
+</body>
+</html>

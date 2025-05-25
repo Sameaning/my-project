@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何高效学习编程 - 学海无涯</title>
+    <style>
+        :root {
+            --primary: #4285f4;
+            --secondary: #34a853;
+            --accent: #ea4335;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2d9246;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid white;
+        }
+        
+        .article-header {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .article-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+        
+        .article-meta span {
+            margin: 0 1rem;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background-color: var(--gray);
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+        
+        .article-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .article-content h2 {
+            color: var(--primary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        .article-content pre {
+            background-color: #f5f5f5;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        .article-content code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+        
+        .article-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .tag {
+            background-color: #e9ecef;
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+            
+            .article-title {
+                font-size: 1.8rem;
+            }
+            
+            .article-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">学海无涯</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="#">分类</a></li>
+                    <li><a href="#">关于</a></li>
+                    <li><a href="edit.html" class="btn btn-outline">写文章</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="article-header">
+            <h1 class="article-title">如何高效学习编程</h1>
+            <div class="article-meta">
+                <span>发布日期: 2025-05-10</span>
+
+            </div>
+            <div class="article-image" style="background-image: url('https://source.unsplash.com/random/800x600/?programming')"></div>
+        </div>
+        
+        <div class="article-content">
+            <p>作为一名计算机专业的学生，我在学习编程的过程中积累了一些经验和方法，今天分享给大家，希望能帮助到正在学习编程的同学们。</p>
+            
+            <h2>1. 建立扎实的基础</h2>
+            <p>编程学习的第一步是打好基础。很多同学急于学习各种框架和工具，却忽略了基础知识的重要性。我建议从以下几个方面入手：</p>
+            
+            <ul>
+                <li>计算机科学基础：数据结构、算法、计算机组成原理</li>
+                <li>编程语言基础：选择一门主流语言深入学习（如Python、Java或C++）</li>
+                <li>软件开发基础：版本控制（Git）、调试技巧、代码规范</li>
+            </ul>
+            
+            <blockquote>
+                "学习编程不是一蹴而就的事情，需要循序渐进，就像建造高楼大厦一样，必须从坚实的地基开始。"
+            </blockquote>
+            
+            <h2>2. 实践是最好的老师</h2>
+            <p>编程是一门实践性很强的技能，仅仅看书和看视频是远远不够的。我推荐以下几种实践方式：</p>
+            
+            <ol>
+                <li>每天编写代码，哪怕只有30分钟</li>
+                <li>参与开源项目，学习优秀代码风格</li>
+                <li>解决实际问题，如开发小型应用或工具</li>
+                <li>参加编程竞赛（如LeetCode、Codeforces）</li>
+            </ol>
+            
+            <p>以下是一个简单的Python代码示例，展示了如何实现快速排序算法：</p>
+            
+            <pre><code>def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+
+print(quick_sort([3,6,8,10,1,2,1]))</code></pre>
+            
+            <h2>3. 构建知识体系</h2>
+            <p>随着学习的深入，你会发现编程涉及的知识点非常多。建立一个系统的知识体系非常重要：</p>
+            
+            <ul>
+                <li>使用思维导图整理知识点</li>
+                <li>定期复习和总结</li>
+                <li>将新知识与已有知识建立联系</li>
+                <li>创建个人知识库（如使用Markdown笔记）</li>
+            </ul>
+            
+            <h2>4. 寻找学习伙伴</h2>
+            <p>编程学习过程中，找到志同道合的学习伙伴可以大大提高学习效率：</p>
+            
+            <ul>
+                <li>加入学习小组或编程社区</li>
+                <li>结对编程，互相review代码</li>
+                <li>讨论问题，分享学习资源</li>
+                <li>参加黑客马拉松或编程比赛</li>
+            </ul>
+            
+            <p>希望这些建议能帮助你在编程学习的道路上走得更远。记住，编程能力的提升是一个长期积累的过程，保持耐心和持续学习的态度非常重要。</p>
+        </div>
+        
+        <div class="tags">
+            <span class="tag">编程</span>
+            <span class="tag">学习方法</span>
+            <span class="tag">计算机科学</span>
+            <span class="tag">Python</span>
+            <span class="tag">学习经验</span>
+        </div>
+        
+        <div class="article-actions">
+
+            <a href="edit.html" class="btn">编辑文章</a>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 学海无涯学习博客. 保留所有权利.</p>
+            <p>联系我们: contact@xuehai.com</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑文章 - 学海无涯</title>
+    <style>
+        :root {
+            --primary: #4285f4;
+            --secondary: #34a853;
+            --accent: #ea4335;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2d9246;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid white;
+        }
+        
+        .btn-danger {
+            background-color: var(--accent);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+        }
+        
+        .editor-header {
+            margin: 2rem 0 1rem;
+        }
+        
+        .editor-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(66, 133, 244, 0.25);
+        }
+        
+        textarea.form-control {
+            min-height: 300px;
+            resize: vertical;
+        }
+        
+        .editor-toolbar {
+            display: flex;
+            margin-bottom: 1rem;
+            gap: 0.5rem;
+        }
+        
+        .editor-toolbar button {
+            padding: 0.5rem;
+            background-color: #e9ecef;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .editor-toolbar button:hover {
+            background-color: #dee2e6;
+        }
+        
+        .editor-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .tag-input {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            min-height: 50px;
+        }
+        
+        .tag {
+            background-color: #e9ecef;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tag-remove {
+            margin-left: 0.3rem;
+            cursor: pointer;
+        }
+        
+        .tag-input input {
+            flex: 1;
+            min-width: 100px;
+            border: none;
+            outline: none;
+            padding: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+            
+            .editor-actions {
+                flex-direction: column;
+            }
+            
+            .editor-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">学海无涯</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="#">分类</a></li>
+                    <li><a href="#">关于</a></li>
+                    <li><a href="edit.html" class="btn btn-outline">写文章</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="editor-header">
+            <h1 class="editor-title">编辑文章</h1>
+        </div>
+        
+        <form id="articleForm">
+            <div class="form-group">
+                <label for="articleTitle" class="form-label">文章标题</label>
+                <input type="text" id="articleTitle" class="form-control" placeholder="输入文章标题" value="如何高效学习编程">
+            </div>
+            
+            <div class="form-group">
+                <label for="articleImage" class="form-label">封面图片</label>
+                <input type="file" id="articleImage" class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">文章内容</label>
+                <div class="editor-toolbar">
+                    <button type="button" title="加粗"><strong>B</strong></button>
+                    <button type="button" title="斜体"><em>I</em></button>
+                    <button type="button" title="标题">H</button>
+                    <button type="button" title="链接">🔗</button>
+                    <button type="button" title="图片">🖼️</button>
+                    <button type="button" title="代码">&lt;/&gt;</button>
+                    <button type="button" title="引用">❝</button>
+                    <button type="button" title="列表">•</button>
+                    <button type="button" title="数字列表">1.</button>
+                </div>
+                <textarea id="articleContent" class="form-control" placeholder="输入文章内容...">
+作为一名计算机专业的学生，我在学习编程的过程中积累了一些经验和方法，今天分享给大家，希望能帮助到正在学习编程的同学们。
+
+## 1. 建立扎实的基础
+
+编程学习的第一步是打好基础。很多同学急于学习各种框架和工具，却忽略了基础知识的重要性。我建议从以下几个方面入手：
+
+- 计算机科学基础：数据结构、算法、计算机组成原理
+- 编程语言基础：选择一门主流语言深入学习（如Python、Java或C++）
+- 软件开发基础：版本控制（Git）、调试技巧、代码规范
+
+> "学习编程不是一蹴而就的事情，需要循序渐进，就像建造高楼大厦一样，必须从坚实的地基开始。"
+
+## 2. 实践是最好的老师
+
+编程是一门实践性很强的技能，仅仅看书和看视频是远远不够的。我推荐以下几种实践方式：
+
+1. 每天编写代码，哪怕只有30分钟
+2. 参与开源项目，学习优秀代码风格
+3. 解决实际问题，如开发小型应用或工具
+4. 参加编程竞赛（如LeetCode、Codeforces）
+
+以下是一个简单的Python代码示例，展示了如何实现快速排序算法：
